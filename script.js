@@ -5,9 +5,15 @@ const quotes = document.getElementById("quotes");
 function startAgeUpdate() {
 	const date = new Date(dob.value);
 	setInterval(() => {
-		quotes.innerText =
-			quotesArray[Math.floor(Math.random() * quotesArray.length)];
-	}, 5000);
+		quotes.classList.add("fade-out");
+		quotes.classList.remove("fade-in");
+		setTimeout(() => {
+			quotes.innerText =
+				quotesArray[Math.floor(Math.random() * quotesArray.length)];
+			quotes.classList.remove("fade-out");
+			quotes.classList.add("fade-in");
+		}, 1000);
+	}, 2000);
 	setInterval(() => {
 		const current = new Date();
 		const age = current - date;

@@ -56,8 +56,18 @@ span {
 }
 
 .quotes {
-    font-size: 22px;
-    font-style: italic;
+	font-size: 22px;
+	font-style: italic;
+	opacity: 1;
+	transition: opacity 1s ease-in-out;
+}
+
+.quotes.fade-in {
+	opacity: 1;
+}
+
+.quotes.fade-out {
+	opacity: 0;
 }
 
 @media screen and (max-width: 500px) {
@@ -81,5 +91,9 @@ span {
 
 	span {
 		font-size: 50px;
+	}
+
+	.quotes {
+		font-size: 20px;
 	}
 }
