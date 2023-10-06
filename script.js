@@ -1,15 +1,11 @@
-let intervalId;
-let dobDate;
+const dob = document.getElementById("dob");
+const result = document.getElementById("result");
 
 function startAgeUpdate() {
-	dobDate = new Date(document.getElementById("dob").value);
-	const ageElement = document.getElementById("ageResult");
-
-	intervalId = setInterval(function () {
-		const today = new Date();
-		const ageInMilliseconds = today - dobDate;
-		const ageInSeconds = ageInMilliseconds / 1000;
-		const decimalAge = ageInSeconds / (365.25 * 24 * 60 * 60);
-		ageElement.textContent = decimalAge.toFixed(10);
-	}, 10);
+	const date = new Date(dob.value);
+	setInterval(() => {
+		const current = new Date();
+		const age = current - date;
+		result.innerText = (age / 1000 / 60 / 60 / 24 / 365.25).toPrecision(10);
+	}, 100);
 }
