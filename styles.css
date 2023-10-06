@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-	margin: 20px;
+	padding: 20px;
 }
 
 label {
@@ -25,6 +25,7 @@ input[type="date"] {
 	font-size: 16px;
 	border-radius: 10px;
 	border: 1px solid black;
+	width: 200px;
 }
 
 button {
@@ -43,6 +44,7 @@ button {
 	flex-direction: column;
 	align-items: center;
 	height: 70%;
+	font-weight: 500;
 }
 
 p {
@@ -53,7 +55,12 @@ span {
 	font-size: 100px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
+	body {
+		height: 100vh;
+		width: 100%;
+	}
+
 	input[type="date"] {
 		width: 90%;
 	}
@@ -63,7 +70,11 @@ span {
 		margin-top: 10px;
 	}
 
-	.result {
-		font-size: 30px;
+	p {
+		font-size: 22px;
+	}
+
+	span {
+		font-size: 50px;
 	}
 }
