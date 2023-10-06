@@ -13,7 +13,7 @@ function startAgeUpdate() {
 			quotes.classList.remove("fade-out");
 			quotes.classList.add("fade-in");
 		}, 1000);
-	}, 2000);
+	}, 6000);
 	setInterval(() => {
 		const current = new Date();
 		const age = current - date;
