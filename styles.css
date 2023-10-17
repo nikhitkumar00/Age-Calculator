@@ -70,6 +70,16 @@ span {
 	opacity: 0;
 }
 
+.captions {
+	font-size: 20px;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+
+.caption {
+	opacity: 1;
+}
+
 @media screen and (max-width: 500px) {
 	body {
 		height: 100vh;
@@ -95,5 +105,9 @@ span {
 
 	.quotes {
 		font-size: 20px;
+	}
+
+	.captions {
+		font-size: 18px;
 	}
 }

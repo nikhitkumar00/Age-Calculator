@@ -1,6 +1,7 @@
 const dob = document.getElementById("dob");
 const result = document.getElementById("result");
 const quotes = document.getElementById("quotes");
+const imp = document.getElementById("imp")
 
 function startAgeUpdate() {
 	const date = new Date(dob.value);
@@ -15,9 +16,10 @@ function startAgeUpdate() {
 		}, 1000);
 	}, 6000);
 	setInterval(() => {
+		imp.classList.add("caption")
 		const current = new Date();
 		const age = current - date;
-		result.innerText = (age / 1000 / 60 / 60 / 24 / 365.25).toPrecision(10);
+		result.innerText = (age / 1000 / 60 / 60 / 24 / 365.25).toPrecision(11);
 	}, 100);
 }
 const quotesArray = [
