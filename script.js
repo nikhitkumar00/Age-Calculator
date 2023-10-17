@@ -1,7 +1,7 @@
 const dob = document.getElementById("dob");
 const result = document.getElementById("result");
 const quotes = document.getElementById("quotes");
-const imp = document.getElementById("imp")
+const imp = document.getElementById("imp");
 
 function startAgeUpdate() {
 	const date = new Date(dob.value);
@@ -16,11 +16,54 @@ function startAgeUpdate() {
 		}, 1000);
 	}, 6000);
 	setInterval(() => {
-		imp.classList.add("caption")
+		imp.classList.add("caption");
 		const current = new Date();
-		const age = current - date;
-		result.innerText = (age / 1000 / 60 / 60 / 24 / 365.25).toPrecision(11);
-	}, 100);
+		const milliseconds = current - date;
+
+		// Calculate years and the remaining milliseconds
+		const years = Math.floor(milliseconds / 1000 / 60 / 60 / 24 / 365.25);
+		var remainingMilliseconds =
+			milliseconds - years * 1000 * 60 * 60 * 24 * 365.25;
+
+		// Calculate months and the remaining milliseconds
+		const months = Math.floor(
+			remainingMilliseconds / 1000 / 60 / 60 / 24 / 30.44
+		);
+		remainingMilliseconds -= months * 1000 * 60 * 60 * 24 * 30.44;
+
+		// Calculate days and the remaining milliseconds
+		const days = Math.floor(remainingMilliseconds / 1000 / 60 / 60 / 24);
+		remainingMilliseconds -= days * 1000 * 60 * 60 * 24;
+
+		// Calculate hours and the remaining milliseconds
+		const hours = Math.floor(remainingMilliseconds / 1000 / 60 / 60);
+		remainingMilliseconds -= hours * 1000 * 60 * 60;
+
+		// Calculate minutes and the remaining milliseconds
+		const minutes = Math.floor(remainingMilliseconds / 1000 / 60);
+		remainingMilliseconds -= minutes * 1000 * 60;
+
+		// Calculate seconds and the remaining milliseconds
+		const seconds = Math.floor(remainingMilliseconds / 1000);
+
+		console.log(
+			years,
+			months,
+			days,
+			hours,
+			minutes,
+			seconds,
+			remainingMilliseconds
+		);
+		result.innerText = (
+			milliseconds /
+			1000 /
+			60 /
+			60 /
+			24 /
+			365
+		).toPrecision(11);
+	}, 1000);
 }
 const quotesArray = [
 	"Time is the most valuable thing a man can spend. - Theophrastus",
