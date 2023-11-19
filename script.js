@@ -63,7 +63,7 @@ function startAgeUpdate() {
 			24 /
 			365
 		).toPrecision(11);
-	}, 1000);
+	}, 50);
 }
 const quotesArray = [
 	"Time is the most valuable thing a man can spend. - Theophrastus",
