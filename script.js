@@ -46,15 +46,6 @@ function startAgeUpdate() {
 		// Calculate seconds and the remaining milliseconds
 		const seconds = Math.floor(remainingMilliseconds / 1000);
 
-		console.log(
-			years,
-			months,
-			days,
-			hours,
-			minutes,
-			seconds,
-			remainingMilliseconds
-		);
 		result.innerText = (
 			milliseconds /
 			1000 /
