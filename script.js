@@ -2,18 +2,17 @@ const dob = document.getElementById("dob");
 const result = document.getElementById("result");
 const quotes = document.getElementById("quotes");
 const imp = document.getElementById("imp");
+const darkMode = document.getElementById("darkmode");
+
+darkMode.addEventListener("click", () => {
+	document.documentElement.classList.toggle("dark");
+});
 
 function startAgeUpdate() {
 	const date = new Date(dob.value);
 	setInterval(() => {
-		quotes.classList.add("fade-out");
-		quotes.classList.remove("fade-in");
-		setTimeout(() => {
-			quotes.innerText =
-				quotesArray[Math.floor(Math.random() * quotesArray.length)];
-			quotes.classList.remove("fade-out");
-			quotes.classList.add("fade-in");
-		}, 1000);
+		quotes.innerText =
+			quotesArray[Math.floor(Math.random() * quotesArray.length)];
 	}, 6000);
 	setInterval(() => {
 		imp.classList.add("caption");
