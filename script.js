@@ -3,47 +3,37 @@ const result = document.getElementById("result");
 const quotes = document.getElementById("quotes");
 const imp = document.getElementById("imp");
 const darkMode = document.getElementById("darkmode");
+let ageUpdateInterval;
 
-darkMode.addEventListener("click", () => {
-	document.documentElement.classList.toggle("dark");
-});
+darkMode.addEventListener("click", () =>
+	document.documentElement.classList.toggle("dark")
+);
 
 function startAgeUpdate() {
 	const date = new Date(dob.value);
-	setInterval(() => {
-		quotes.innerText =
-			quotesArray[Math.floor(Math.random() * quotesArray.length)];
-	}, 6000);
-	setInterval(() => {
-		imp.classList.add("caption");
+	setInterval(
+		() =>
+			(quotes.innerText =
+				quotesArray[Math.floor(Math.random() * quotesArray.length)]),
+		6000
+	);
+
+	clearInterval(ageUpdateInterval);
+	ageUpdateInterval = setInterval(() => {
 		const current = new Date();
 		const milliseconds = current - date;
-
-		// Calculate years and the remaining milliseconds
 		const years = Math.floor(milliseconds / 1000 / 60 / 60 / 24 / 365.25);
-		var remainingMilliseconds =
+		let remainingMilliseconds =
 			milliseconds - years * 1000 * 60 * 60 * 24 * 365.25;
 
-		// Calculate months and the remaining milliseconds
-		const months = Math.floor(
-			remainingMilliseconds / 1000 / 60 / 60 / 24 / 30.44
-		);
-		remainingMilliseconds -= months * 1000 * 60 * 60 * 24 * 30.44;
-
-		// Calculate days and the remaining milliseconds
-		const days = Math.floor(remainingMilliseconds / 1000 / 60 / 60 / 24);
-		remainingMilliseconds -= days * 1000 * 60 * 60 * 24;
-
-		// Calculate hours and the remaining milliseconds
-		const hours = Math.floor(remainingMilliseconds / 1000 / 60 / 60);
-		remainingMilliseconds -= hours * 1000 * 60 * 60;
-
-		// Calculate minutes and the remaining milliseconds
-		const minutes = Math.floor(remainingMilliseconds / 1000 / 60);
-		remainingMilliseconds -= minutes * 1000 * 60;
-
-		// Calculate seconds and the remaining milliseconds
-		const seconds = Math.floor(remainingMilliseconds / 1000);
+		const units = ["months", "days", "hours", "minutes", "seconds"];
+		const values = units.map((unit) => {
+			const value = Math.floor(
+				remainingMilliseconds / timeUnitInMilliseconds[unit]
+			);
+			remainingMilliseconds -= value * timeUnitInMilliseconds[unit];
+			return value;
+		});
 
 		result.innerText = (
 			milliseconds /
@@ -55,6 +45,14 @@ function startAgeUpdate() {
 		).toPrecision(11);
 	}, 50);
 }
+
+const timeUnitInMilliseconds = {
+	months: 1000 * 60 * 60 * 24 * 30.44,
+	days: 1000 * 60 * 60 * 24,
+	hours: 1000 * 60 * 60,
+	minutes: 1000 * 60,
+	seconds: 1000,
+};
 const quotesArray = [
 	"Time is the most valuable thing a man can spend. - Theophrastus",
 	"Time flies over us, but leaves its shadow behind. - Nathaniel Hawthorne",
