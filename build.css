@@ -20,6 +20,7 @@ html {
 		Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 	font-feature-settings: normal;
 	font-variation-settings: normal;
+	font-smooth: subpixel-antialiased;
 }
 body {
 	margin: 0;
