@@ -1,15 +1,15 @@
 {
-  "name": "age-calculator",
-  "version": "1.0.0",
-  "description": "Welcome to the Real-Time Age Calculator! This webpage allows you to input your date of birth and see your current age in real-time.",
-  "main": "script.js",
-  "scripts": {
-    "css": "tailwindcss build -i ./src/input.css -o styles.css --watch"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "tailwindcss": "^3.3.6"
-  }
+	"name": "age-calculator",
+	"version": "1.0.0",
+	"description": "Welcome to the Real-Time Age Calculator! This webpage allows you to input your date of birth and see your current age in real-time.",
+	"main": "script.js",
+	"scripts": {
+		"css": "tailwindcss build -i ./src/input.css -o ./build.css --watch"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"tailwindcss": "^3.3.6"
+	}
 }

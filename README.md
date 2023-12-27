@@ -10,7 +10,6 @@ Welcome to the Real-Time Age Calculator! This webpage allows you to input your d
 
 ## Features
 
-- Real-time age calculation.
-- Random quotes displayed with fading animation.
-- Responsive design for different screen sizes.
-
+-   Real-time age calculation.
+-   Random quotes displayed with fading animation.
+-   Responsive design for different screen sizes.
