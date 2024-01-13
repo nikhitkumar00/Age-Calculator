@@ -44,4 +44,4 @@ Visit the live version of the Real-Time Age Calculator on [Netlify](https://agec
 
 Thank you for choosing the Real-Time Age Calculator! 🌟 If you have any questions or feedback, please don't hesitate to reach out.
 
-Happy calculating! 🎈
+Happy calculating! 🎈 
