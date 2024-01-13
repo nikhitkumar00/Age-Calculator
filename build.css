@@ -469,6 +469,10 @@ video {
 	--tw-bg-opacity: 1;
 	background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
+.bi-sun:hover {
+    cursor: pointer;
+	transform: scale(1.2);
+}
 @media (min-width: 768px) {
 	.md\:text-6xl {
 		font-size: 3.75rem;
