@@ -48,6 +48,22 @@ const timeUnitInMilliseconds = {
 	seconds: 1000,
 };
 
+if ("serviceWorker" in navigator) {
+	window.addEventListener("load", function () {
+		navigator.serviceWorker.register("/service-worker.js").then(
+			function (registration) {
+				console.log(
+					"ServiceWorker registration successful with scope: ",
+					registration.scope
+				);
+			},
+			function (err) {
+				console.log("ServiceWorker registration failed: ", err);
+			}
+		);
+	});
+}
+
 const quotesList = [
 	"Time is the most valuable thing a man can spend. - Theophrastus",
 	"Time flies over us, but leaves its shadow behind. - Nathaniel Hawthorne",
