@@ -142,4 +142,5 @@ new Typewriter(quotes, {
 	autoStart: true,
 	loop: true,
 	cursor: "",
+	delay: 50,
 });

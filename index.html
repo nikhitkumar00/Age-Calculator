@@ -4,39 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Real-Time Age Calculator</title>
+
     <link rel="stylesheet" href="build.css">
     <meta name="theme-color" content="#93c5fd">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Link to 32x32 favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+
+    <!-- Link to 16x16 favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-32x32.png">
+
     <link rel="manifest" href="/manifest.json">
 </head>
 
 <body class="relative flex flex-col items-center w-full gap-5 antialiased bg-blue-100 dark:bg-gray-900 h-[100dvh]">
+
+    <!-- Dark mode toggle button -->
     <div id="darkmode"
         class="absolute w-6 h-6 bg-blue-200 dark:bg-gray-950 dark:fill-gray-100 top-4 left-4 fill-blue-600 hover:scale-125 transition-all">
+
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
             <path
                 d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
             </path>
         </svg>
     </div>
+
+    <!-- Input section for date of birth -->
     <div class="flex flex-col items-center w-full p-10 bg-blue-200 rounded-lg dark:bg-gray-950">
+
         <label class="p-2 text-lg font-medium uppercase dark:text-gray-100" for="dob">Enter your Date of Birth</label>
-        <input class="px-4 py-2 border-2 dark:bg-black dark:text-gray-100 rounded-xl" type="date" id="dob">
+        <input class="px-4 py-2 border-2 dark:bg-black dark:text-gray-100 rounded-xl" type="date" id="dob"
+            value="2003-02-03">
+
         <button
             class="px-6 py-2 mt-5 text-sm font-semibold uppercase transition ease-in-out bg-blue-300 rounded-full dark:hover:bg-gray-900 dark:bg-gray-800 dark:text-gray-100 hover:shadow-lg hover:bg-blue-400 hover:duration-300"
             onclick="startAgeUpdate()">Start</button>
     </div>
+
+    <!-- Display section for current age -->
     <div class="flex flex-col items-center justify-around flex-grow">
         <p class="text-2xl font-semibold uppercase dark:text-gray-100">Current Age</p>
         <span class="text-5xl dark:text-gray-100 md:text-6xl text-center w-[10ch]" id="result">0</span>
         <p id="imp" class="text-xs uppercase dark:text-gray-100">This is how fast your age is moving</p>
     </div>
+
+    <!-- Container for quotes -->
     <div class="px-8 py-2 mb-10 italic font-semibold capitalize bg-blue-200 dark:text-gray-100 dark:bg-gray-800 rounded-xl"
         id="quotes"></div>
+
+    <!-- Typewriter effect script -->
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+
+    <!-- Custom script -->
     <script src="script.js"></script>
 </body>
 
